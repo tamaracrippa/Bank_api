@@ -1,0 +1,628 @@
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA))"; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKPTUXXE1LXGUR797KKONSKJQHA FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FKGIA9VE3BNSGEH2NL23WL6EQ09 FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-12 15:42:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA))"; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKPTUXXE1LXGUR797KKONSKJQHA FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FKGIA9VE3BNSGEH2NL23WL6EQ09 FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 10:58:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA))"; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKPTUXXE1LXGUR797KKONSKJQHA FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FKGIA9VE3BNSGEH2NL23WL6EQ09 FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 11:06:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (IDAGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (IDAGENCIA))"; SQL statement:
+create table api_banco/agencia (idagencia integer not null, endereco_id_endereco bigint, primary key (idagencia)) [42000-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_IDAGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_idagencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_IDAGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_idagencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK5BY6ASFTXFEM3AX5L497MM79O FOREIGN KEY (AGENCIA_IDAGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK5by6asftxfem3ax5l497mm79o foreign key (agencia_idagencia) references api_banco/agencia [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FK4M0NJBH4DC01XYCH30MM76PDQ FOREIGN KEY (AGENCIA_IDAGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FK4m0njbh4dc01xych30mm76pdq foreign key (agencia_idagencia) references api_banco/agencia [42001-200]
+2022-01-13 15:15:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (CODIGOAGENCIA INTEGER NOT NULL, ENDERECO_CODIGOENDERECO BIGINT, PRIMARY KEY (CODIGOAGENCIA))"; SQL statement:
+create table api_banco/agencia (codigoagencia integer not null, endereco_codigoendereco bigint, primary key (codigoagencia)) [42000-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_CODIGOAGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_CODIGOENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_codigoagencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_codigoendereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_CODIGOAGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_codigoagencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (CODIGOENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (CODIGOENDERECO))"; SQL statement:
+create table api_banco/endereco (codigoendereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (codigoendereco)) [42000-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK9XUC1KD597CBVM74Q2XYADQIT FOREIGN KEY (ENDERECO_CODIGOENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK9xuc1kd597cbvm74q2xyadqit foreign key (endereco_codigoendereco) references api_banco/endereco [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK79QBPU3V5B45707BA4LFN542N FOREIGN KEY (AGENCIA_CODIGOAGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK79qbpu3v5b45707ba4lfn542n foreign key (agencia_codigoagencia) references api_banco/agencia [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK4H5EQEAEDCKTA8IGWIEMDXSOE FOREIGN KEY (ENDERECO_CODIGOENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK4h5eqeaedckta8igwiemdxsoe foreign key (endereco_codigoendereco) references api_banco/endereco [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FK1C4A8CEAULXL87XYDNGLMU378 FOREIGN KEY (AGENCIA_CODIGOAGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FK1c4a8ceaulxl87xydnglmu378 foreign key (agencia_codigoagencia) references api_banco/agencia [42001-200]
+2022-01-13 15:19:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA))"; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKPTUXXE1LXGUR797KKONSKJQHA FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FKGIA9VE3BNSGEH2NL23WL6EQ09 FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA))"; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKPTUXXE1LXGUR797KKONSKJQHA FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FKGIA9VE3BNSGEH2NL23WL6EQ09 FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:32:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA))"; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKPTUXXE1LXGUR797KKONSKJQHA FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FKGIA9VE3BNSGEH2NL23WL6EQ09 FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:37:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS API_BANCO/[*]AGENCIA CASCADE "; SQL statement:
+drop table if exists api_banco/agencia CASCADE  [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS API_BANCO/[*]BANCO CASCADE "; SQL statement:
+drop table if exists api_banco/banco CASCADE  [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS API_BANCO/[*]CLIENTE CASCADE "; SQL statement:
+drop table if exists api_banco/cliente CASCADE  [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS API_BANCO/[*]CONTA CASCADE "; SQL statement:
+drop table if exists api_banco/conta CASCADE  [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS API_BANCO/[*]ENDERECO CASCADE "; SQL statement:
+drop table if exists api_banco/endereco CASCADE  [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS API_BANCO/[*]LOGRADOURO CASCADE "; SQL statement:
+drop table if exists api_banco/logradouro CASCADE  [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA))"; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO))"; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE))"; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA))"; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO))"; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO))"; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]AGENCIA ADD CONSTRAINT FK68VG1DM924N0CPTEVL9IAL9OQ FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKPTUXXE1LXGUR797KKONSKJQHA FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKC9BAYX2DY4JO7V38HBJFA1ACU FOREIGN KEY (CODIGO_BANCO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKMEO1D5VKNA77GG8QGFCO4YT72 FOREIGN KEY (CODIGO_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKR3BJ1BKFRL08WQY4LLPEYWGQC FOREIGN KEY (DIGITO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKEF0OPDC5KL9HP1LAY78J86VR3 FOREIGN KEY (ENDERECO_ID_ENDERECO) REFERENCES API_BANCO/ENDERECO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FK80PEYRWJUXIAOK78SMK8YYF91 FOREIGN KEY (NM_CONTA_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKO8WDK0CMAQXNMADOKB80E9F4X FOREIGN KEY (SALDO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CLIENTE ADD CONSTRAINT FKHP76GEQFF0KK0I2AGA9SXQTDJ FOREIGN KEY (TIPO_ID_CONTA) REFERENCES API_BANCO/CONTA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]CONTA ADD CONSTRAINT FKGIA9VE3BNSGEH2NL23WL6EQ09 FOREIGN KEY (AGENCIA_ID_AGENCIA) REFERENCES API_BANCO/AGENCIA"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42001-200]
+2022-01-13 15:41:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE API_BANCO/[*]ENDERECO ADD CONSTRAINT FKNJCPAXLC37GU2L941JUF1GIPD FOREIGN KEY (LOGRADOURO_ID_LOGRADOURO) REFERENCES API_BANCO/LOGRADOURO"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42001-200]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]AGENCIA (ID_AGENCIA INTEGER NOT NULL, ENDERECO_ID_ENDERECO BIGINT, PRIMARY KEY (ID_AGENCIA)) "; SQL statement:
+create table api_banco/agencia (id_agencia integer not null, endereco_id_endereco bigint, primary key (id_agencia)) [42000-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]BANCO (ID_BANCO VARCHAR(255) NOT NULL, CNPJ BIGINT, CODIGO_BANCO INTEGER, PRIMARY KEY (ID_BANCO)) "; SQL statement:
+create table api_banco/banco (id_banco varchar(255) not null, cnpj bigint, codigo_banco integer, primary key (id_banco)) [42000-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CLIENTE (ID_CLIENTE VARCHAR(255) NOT NULL, CODIGO_CLIENTE INTEGER, CPF BIGINT, EMAIL VARCHAR(255), PROFISSAO VARCHAR(255), SEXO VARCHAR(255), TELEFONE BIGINT, AGENCIA_ID_AGENCIA INTEGER, CODIGO_BANCO_ID_CONTA BIGINT, CODIGO_CONTA_ID_CONTA BIGINT, DIGITO_ID_CONTA BIGINT, ENDERECO_ID_ENDERECO BIGINT, NM_CONTA_ID_CONTA BIGINT, SALDO_ID_CONTA BIGINT, TIPO_ID_CONTA BIGINT, PRIMARY KEY (ID_CLIENTE)) "; SQL statement:
+create table api_banco/cliente (id_cliente varchar(255) not null, codigo_cliente integer, cpf bigint, email varchar(255), profissao varchar(255), sexo varchar(255), telefone bigint, agencia_id_agencia integer, codigo_banco_id_conta bigint, codigo_conta_id_conta bigint, digito_id_conta bigint, endereco_id_endereco bigint, nm_conta_id_conta bigint, saldo_id_conta bigint, tipo_id_conta bigint, primary key (id_cliente)) [42000-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]CONTA (ID_CONTA BIGINT NOT NULL, CODIGO_BANCO VARCHAR(255), CODIGO_CLIENTE BIGINT, DIGITO INTEGER, NM_CONTA INTEGER, SALDO FLOAT NOT NULL, TIPO VARCHAR(255), AGENCIA_ID_AGENCIA INTEGER, PRIMARY KEY (ID_CONTA)) "; SQL statement:
+create table api_banco/conta (id_conta bigint not null, codigo_banco varchar(255), codigo_cliente bigint, digito integer, nm_conta integer, saldo float not null, tipo varchar(255), agencia_id_agencia integer, primary key (id_conta)) [42000-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]ENDERECO (ID_ENDERECO BIGINT NOT NULL, CEP BIGINT, CIDADE VARCHAR(255), ESTADO VARCHAR(255), LOGRADOURO_ID_LOGRADOURO BIGINT, PRIMARY KEY (ID_ENDERECO)) "; SQL statement:
+create table api_banco/endereco (id_endereco bigint not null, cep bigint, cidade varchar(255), estado varchar(255), logradouro_id_logradouro bigint, primary key (id_endereco)) [42000-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE API_BANCO/[*]LOGRADOURO (ID_LOGRADOURO BIGINT NOT NULL, BAIRRO VARCHAR(255), COMPLEMENTO VARCHAR(255), NUMERO INTEGER, RUA VARCHAR(255), PRIMARY KEY (ID_LOGRADOURO)) "; SQL statement:
+create table api_banco/logradouro (id_logradouro bigint not null, bairro varchar(255), complemento varchar(255), numero integer, rua varchar(255), primary key (id_logradouro)) [42000-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/agencia add constraint FK68vg1dm924n0cptevl9ial9oq foreign key (endereco_id_endereco) references api_banco/endereco [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FKptuxxe1lxgur797kkonskjqha foreign key (agencia_id_agencia) references api_banco/agencia [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FKc9bayx2dy4jo7v38hbjfa1acu foreign key (codigo_banco_id_conta) references api_banco/conta [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FKmeo1d5vkna77gg8qgfco4yt72 foreign key (codigo_conta_id_conta) references api_banco/conta [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FKr3bj1bkfrl08wqy4llpeywgqc foreign key (digito_id_conta) references api_banco/conta [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FKef0opdc5kl9hp1lay78j86vr3 foreign key (endereco_id_endereco) references api_banco/endereco [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FK80peyrwjuxiaok78smk8yyf91 foreign key (nm_conta_id_conta) references api_banco/conta [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FKo8wdk0cmaqxnmadokb80e9f4x foreign key (saldo_id_conta) references api_banco/conta [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/cliente add constraint FKhp76geqff0kk0i2aga9sxqtdj foreign key (tipo_id_conta) references api_banco/conta [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/conta add constraint FKgia9ve3bnsgeh2nl23wl6eq09 foreign key (agencia_id_agencia) references api_banco/agencia [42102-164]
+01-13 15:56:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Table "API_BANCO" not found; SQL statement:
+alter table api_banco/endereco add constraint FKnjcpaxlc37gu2l941juf1gipd foreign key (logradouro_id_logradouro) references api_banco/logradouro [42102-164]
+01-13 15:57:20 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "min_value" not found [42122-164]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:622)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.resultSetMinValue(SequenceInformationExtractorLegacyImpl.java:134)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:60)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.sequenceInformationList(JdbcEnvironmentImpl.java:403)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.<init>(JdbcEnvironmentImpl.java:268)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:114)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at apiBanco.ApiPdiApplicationKt.main(ApiPdiApplication.kt:14)
+01-14 09:27:53 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: Column "min_value" not found [42122-164]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:2882)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:2968)
+	at org.h2.jdbc.JdbcResultSet.getLong(JdbcResultSet.java:622)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getLong(HikariProxyResultSet.java)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.resultSetMinValue(SequenceInformationExtractorLegacyImpl.java:134)
+	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:60)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.sequenceInformationList(JdbcEnvironmentImpl.java:403)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentImpl.<init>(JdbcEnvironmentImpl.java:268)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:114)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at apiBanco.ApiPdiApplicationKt.main(ApiPdiApplication.kt:14)
